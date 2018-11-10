@@ -26,7 +26,7 @@ import java.util.Map;
  */
 @Configuration
 @EnableTransactionManagement
-@EntityScan(basePackages = "com.compras.flozano.model")
+@EntityScan(basePackages = "com.ads.activosfijos.entityLayer")
 public class CustomJpaConfiguration extends JpaBaseConfiguration {
 
     protected CustomJpaConfiguration(DataSource dataSource, JpaProperties properties, ObjectProvider<JtaTransactionManager> jtaTransactionManagerProvider) {
@@ -50,7 +50,7 @@ public class CustomJpaConfiguration extends JpaBaseConfiguration {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(final EntityManagerFactoryBuilder builder) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(getDataSource());
-        em.setPackagesToScan(new String[]{"com.ads.activosfijos.model"});
+        em.setPackagesToScan(new String[]{"com.ads.activosfijos.entityLayer"});
         em.setJpaVendorAdapter(createJpaVendorAdapter());
         em.setJpaPropertyMap(initJpaProperties());
 
