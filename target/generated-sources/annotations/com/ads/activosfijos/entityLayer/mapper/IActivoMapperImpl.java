@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-11-10T22:10:27-0500",
+    date = "2018-11-11T14:12:12-0500",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_131 (Oracle Corporation)"
 )
 @Component
@@ -62,6 +62,7 @@ public class IActivoMapperImpl implements IActivoMapper {
         if ( idestado != null ) {
             activoDTO.setIdestado( idestado );
         }
+        activoDTO.setIdactivo( activo.getIdactivo() );
         activoDTO.setNombre( activo.getNombre() );
         activoDTO.setDescripcion( activo.getDescripcion() );
         activoDTO.setSerial( activo.getSerial() );
@@ -84,6 +85,7 @@ public class IActivoMapperImpl implements IActivoMapper {
         activo1.setCaracteristicas( activoDTOToCaracteristicas( activo ) );
         activo1.setIdtipo( activoDTOToTipo( activo ) );
         activo1.setIdestado( activoDTOToEstado( activo ) );
+        activo1.setIdactivo( activo.getIdactivo() );
         activo1.setNombre( activo.getNombre() );
         activo1.setDescripcion( activo.getDescripcion() );
         activo1.setSerial( activo.getSerial() );
