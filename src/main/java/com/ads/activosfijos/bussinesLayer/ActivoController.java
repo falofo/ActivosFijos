@@ -36,5 +36,13 @@ public class ActivoController {
         return new ResponseEntity<>(idOrder, HttpStatus.OK);
     }
 
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<?> getActivos() {
 
+        List<Activo> listaActivos = serviceActivo.getActivos();
+        if (listaActivos.size()==0){
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(listaActivos,HttpStatus.OK);
+    }
 }

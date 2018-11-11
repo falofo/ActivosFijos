@@ -1,5 +1,7 @@
 package com.ads.activosfijos.entityLayer;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -38,6 +40,7 @@ public class Tipo implements Serializable {
     @Size(max = 45)
     @Column(name = "descripcion")
     private String descripcion;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idtipo")
     private Collection<Activo> activoCollection;
 

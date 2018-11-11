@@ -1,5 +1,7 @@
 package com.ads.activosfijos.entityLayer;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
@@ -64,13 +66,13 @@ public class Activo implements Serializable {
             fetch = FetchType.LAZY, optional = false)
     private Caracteristicas caracteristicas;
     @JoinColumn(name = "iddueno", referencedColumnName = "iddueno")
-    @ManyToOne(optional = false)
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
     private Dueno iddueno;
     @JoinColumn(name = "idestado", referencedColumnName = "idestado")
-    @ManyToOne(optional = false)
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
     private Estado idestado;
     @JoinColumn(name = "idtipo", referencedColumnName = "idtipo")
-    @ManyToOne(optional = false)
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
     private Tipo idtipo;
 
     public Activo() {

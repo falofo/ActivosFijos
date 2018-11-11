@@ -5,6 +5,8 @@
  */
 package com.ads.activosfijos.entityLayer;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -47,6 +49,7 @@ public class Dueno implements Serializable {
     @Size(max = 45)
     @Column(name = "idpa")
     private String idpa;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "iddueno")
     private Collection<Activo> activoCollection;
 
