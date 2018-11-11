@@ -1,43 +1,38 @@
 package com.ads.activosfijos.entityLayer.dto;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Created by Fabiani Lozano on 10/11/2018.
+ * Created by Fabiani Lozano on 11/11/2018.
  */
-public class ActivoDTO implements Serializable{
+@Entity
+public class ActivoConsultaDTO implements Serializable{
     private static final long serialVersionUID = 1L;
+    @Id
     private Integer idactivo;
-    @NotNull
-    @Size(min = 1, max = 45)
     private String nombre;
-    @Size(max = 200)
     private String descripcion;
-    @NotNull
-    @Size(min = 1, max = 45)
     private String serial;
-    @NotNull
+    @Column(name = "numero_interno")
     private Integer numeroInterno;
-    @NotNull
+    @Column(name = "valor_compra")
     private Double valorCompra;
-    @NotNull
+    @Column(name = "fecha_compra")
     private Date fechaCompra;
+    @Column(name = "fecha_baja")
+    private Date fechaBaja;
     private Double peso;
     private Double alto;
     private Double ancho;
     private Double largo;
     private String color;
-    @NotNull
-    private TipoDueno tipoDueno;
-    @NotNull
-    private Integer idDueno;
-    @NotNull
-    private Integer idestado;
-    @NotNull
-    private Integer idtipo;
+    private String estado;
+    private String tipo;
+    private String asignado;
 
     public Integer getIdactivo() {
         return idactivo;
@@ -95,6 +90,14 @@ public class ActivoDTO implements Serializable{
         this.fechaCompra = fechaCompra;
     }
 
+    public Date getFechaBaja() {
+        return fechaBaja;
+    }
+
+    public void setFechaBaja(Date fechaBaja) {
+        this.fechaBaja = fechaBaja;
+    }
+
     public Double getPeso() {
         return peso;
     }
@@ -135,52 +138,27 @@ public class ActivoDTO implements Serializable{
         this.color = color;
     }
 
-    public TipoDueno getTipoDueno() {
-        return tipoDueno;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setTipoDueno(TipoDueno tipoDueno) {
-        this.tipoDueno = tipoDueno;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public Integer getIdDueno() {
-        return idDueno;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setIdDueno(Integer idDueno) {
-        this.idDueno = idDueno;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    public Integer getIdestado() {
-        return idestado;
+    public String getAsignado() {
+        return asignado;
     }
 
-    public void setIdestado(Integer idestado) {
-        this.idestado = idestado;
-    }
-
-    public Integer getIdtipo() {
-        return idtipo;
-    }
-
-    public void setIdtipo(Integer idtipo) {
-        this.idtipo = idtipo;
-    }
-
-    public enum TipoDueno {
-        PERSONA("persona"),
-        AREA("area")
-        ;
-
-        private final String text;
-
-        TipoDueno(final String text) {
-            this.text = text;
-        }
-
-        @Override
-        public String toString() {
-            return text;
-        }
+    public void setAsignado(String asignado) {
+        this.asignado = asignado;
     }
 }
