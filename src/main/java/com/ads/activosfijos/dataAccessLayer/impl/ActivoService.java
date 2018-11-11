@@ -28,5 +28,10 @@ public class ActivoService extends AbstractService implements IActivoService {
         return activo.getIdactivo();
     }
 
-
+    @Override
+    public List<Activo> getActivos() {
+        TypedQuery<Activo> query = em.createNamedQuery("Activo.findAll",Activo.class);
+        List<Activo> lista = query.getResultList();
+        return lista;
+    }
 }

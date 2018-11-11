@@ -17,4 +17,9 @@ public interface IActivoService {
      */
     Integer saveActivo(ActivoDTO activo);
 
+    /**
+     * Método para obtener lista de activos
+     * @return @return List {@link Activo} listado de todos los Activos
+     */
+    List<Activo> getActivos();
 }

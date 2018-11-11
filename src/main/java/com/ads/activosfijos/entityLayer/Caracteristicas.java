@@ -1,5 +1,7 @@
 package com.ads.activosfijos.entityLayer;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -39,6 +41,7 @@ public class Caracteristicas implements Serializable {
     @Size(max = 45)
     @Column(name = "color")
     private String color;
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idactivo", nullable = false)
     private Activo activo;
