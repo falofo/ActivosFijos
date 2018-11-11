@@ -23,10 +23,10 @@ public class ActivoController {
     @Autowired
     IActivoService serviceActivo;
     /**
-     * Método para guardar órdenes
+     * Método para guardar activos
      *
-     * @param activo {@link Activo} a guardar
-     * @return id orden guardada
+     * @param activo {@link Activo} a activo
+     * @return id activo guardada
      */
     @RequestMapping(value = "/guardarActivo",method = RequestMethod.POST)
     public ResponseEntity<?> saveActivo(@Valid @RequestBody ActivoDTO activo) {
@@ -51,5 +51,21 @@ public class ActivoController {
         }
         LOG.info("Se encontraron "+listaActivos.size()+" activos");
         return new ResponseEntity<>(listaActivos,HttpStatus.OK);
+    }
+
+    /**
+     * Método para actualizar activos
+     *
+     * @param activo {@link Activo} a guardar
+     * @return id activo guardada
+     */
+    @RequestMapping(value = "/actualizarActivo/{activoId}",method = RequestMethod.POST)
+    public ResponseEntity<?> updateActivo(@PathVariable("activoId") Integer activoId,@Valid @RequestBody ActivoDTO activo) {
+        if (activoId == null){
+            return new ResponseEntity("El id del activo no puede ser nulo", HttpStatus.BAD_REQUEST);
+        }
+        serviceActivo.updateActivo(activo,activoId);
+        LOG.info("Se ha actualizado el activo " + activoId);
+        return new ResponseEntity<>("Activo actualizado correctamente", HttpStatus.OK);
     }
 }
