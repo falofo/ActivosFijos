@@ -34,4 +34,13 @@ public class ActivoService extends AbstractService implements IActivoService {
         List<Activo> lista = query.getResultList();
         return lista;
     }
+
+    @Override
+    @Transactional
+    public void updateActivo(ActivoDTO activoDto, Integer id) {
+        Activo activo = activoMapper.activoDTOToActivo(activoDto);
+        activo.setIdactivo(id);
+        em.merge(activo);
+        em.flush();
+    }
 }

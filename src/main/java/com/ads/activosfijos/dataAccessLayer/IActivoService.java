@@ -22,4 +22,10 @@ public interface IActivoService {
      * @return @return List {@link Activo} listado de todos los Activos
      */
     List<Activo> getActivos();
+
+    /**
+     * Método para actualizar activos
+     * @param activo {@link Activo}
+     */
+    void updateActivo(ActivoDTO activo, Integer id);
 }
