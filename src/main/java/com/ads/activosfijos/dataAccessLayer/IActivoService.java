@@ -1,8 +1,7 @@
 package com.ads.activosfijos.dataAccessLayer;
 
 import com.ads.activosfijos.entityLayer.Activo;
-import com.ads.activosfijos.entityLayer.dto.ActivoConsultaDTO;
-import com.ads.activosfijos.entityLayer.dto.ActivoDTO;
+import com.ads.activosfijos.entityLayer.dto.*;
 
 import java.util.List;
 
@@ -20,7 +19,7 @@ public interface IActivoService {
 
     /**
      * Método para obtener lista de activos
-     * @return @return List {@link Activo} listado de todos los Activos
+     * @return @return List {@link ActivoConsultaDTO} listado de todos los Activos
      */
     List<ActivoConsultaDTO> getActivos();
 
@@ -29,4 +28,30 @@ public interface IActivoService {
      * @param activo {@link Activo}
      */
     void updateActivo(ActivoDTO activo, Integer id);
+
+    /**
+     * Método para obtener lista de activos
+     * @param busqueda {@link BusquedaDTO}
+     * @return @return List {@link ActivoConsultaDTO} listado de todos los Activos
+     */
+    List<ActivoConsultaDTO> getActivosByParameter(BusquedaDTO busqueda);
+
+    /**
+     * Método para obtener lista de personas
+     * @return @return List {@link PersonaDTO} listado de todas las personas
+     */
+    List<PersonaDTO> getPersonas();
+
+    /**
+     * Método para obtener lista de areas
+     * @return @return List {@link AreaDTO} listado de todas las areas
+     */
+    List<AreaDTO> getAreas();
+
+    /**
+     * Método para dar de baja activos
+     * @param dto {@link SerialDTO}
+     * @param id {@link Integer}
+     */
+    void updateSerialBaja(SerialDTO dto, Integer id);
 }
