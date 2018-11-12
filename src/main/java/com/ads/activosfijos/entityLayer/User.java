@@ -10,6 +10,7 @@ import java.io.Serializable;
  * Created by Fabiani Lozano on 11/11/2018.
  */
 @Entity
+@Cacheable(false)
 @Table(name = "user")
 @XmlRootElement
 @NamedQueries({
