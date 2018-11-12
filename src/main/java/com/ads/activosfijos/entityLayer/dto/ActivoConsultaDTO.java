@@ -2,6 +2,7 @@ package com.ads.activosfijos.entityLayer.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,6 +13,7 @@ import java.util.Date;
  * Created by Fabiani Lozano on 11/11/2018.
  */
 @Entity
+@Cacheable(false)
 public class ActivoConsultaDTO implements Serializable{
     private static final long serialVersionUID = 1L;
     @Id

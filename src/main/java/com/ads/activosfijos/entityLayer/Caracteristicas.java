@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Fabiani Lozano
  */
 @Entity
+@Cacheable(false)
 @Table(name = "caracteristicas")
 @XmlRootElement
 @NamedQueries({

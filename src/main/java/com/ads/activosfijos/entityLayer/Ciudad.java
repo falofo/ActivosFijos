@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author Fabiani Lozano
  */
 @Entity
+@Cacheable(false)
 @Table(name = "ciudad")
 @XmlRootElement
 @NamedQueries({
