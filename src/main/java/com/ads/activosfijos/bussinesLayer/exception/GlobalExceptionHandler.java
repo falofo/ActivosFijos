@@ -32,23 +32,14 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Global Exception handler for CrossRideException.
+     * Global Exception handler for ActivoException.
      */
     @ExceptionHandler(ActivoException.class)
-    public ResponseEntity<AbstractMap.SimpleEntry<String, String>> handleCrossException(Exception exception) {
+    public ResponseEntity<AbstractMap.SimpleEntry<String, String>> handleActivoException(Exception exception) {
         // general exception
         LOG.debug("ControlledException: Unable to process this request. ", exception);
         AbstractMap.SimpleEntry<String, String> response =
                 new AbstractMap.SimpleEntry<>("message", exception.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
-
-    /**
-     * Global Exception handler for MethodArgumentNotValidException.
-     */
-    /*@ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity
-    handleMethodArgumentNotValidException( MethodArgumentNotValidException exception ) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ValidationErrorBuilder.fromBindingErrors(exception.getBindingResult()));
-    }*/
 }

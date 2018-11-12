@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
+ * Filtro que captura los request y comprueba que este autorizados
  * Created by Fabiani Lozano on 11/11/2018.
  */
 public class JwtFilter implements Filter {

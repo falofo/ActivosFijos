@@ -1,5 +1,6 @@
 package com.ads.activosfijos.bussinesLayer;
 
+import com.ads.activosfijos.dataAccessLayer.IUserService;
 import com.ads.activosfijos.dataAccessLayer.impl.UserService;
 import com.ads.activosfijos.entityLayer.dto.UserDTO;
 import io.jsonwebtoken.Jwts;
@@ -31,10 +32,15 @@ public class LoginController {
     private String secret;
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
+    /**
+     * Operacion que autentica usuarios y genera jwt
+     * @param login
+     * @return
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.TEXT_PLAIN_VALUE)
-    public ResponseEntity<String> login(@RequestBody @Valid final UserDTO login) throws ServletException {
+    public ResponseEntity<String> login(@RequestBody @Valid final UserDTO login) {
         final boolean existUser = userService.existUser(login.getUser(), login.getPassword());
         if (!existUser) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -51,6 +57,11 @@ public class LoginController {
         return new ResponseEntity<>(jwt, HttpStatus.OK);
     }
 
+    /**
+     * Operacion que registra los usuarios
+     * @param user
+     * @return
+     */
     @RequestMapping(value = "/registrarUsuario", method = RequestMethod.POST)
     public ResponseEntity<?> registerUser(@RequestBody @Valid final UserDTO user){
         userService.registerUser(user);

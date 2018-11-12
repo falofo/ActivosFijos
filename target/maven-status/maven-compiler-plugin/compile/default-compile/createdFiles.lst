@@ -1,7 +1,7 @@
 com\ads\activosfijos\bussinesLayer\ActivoController.class
 com\ads\activosfijos\entityLayer\Persona.class
-com\ads\activosfijos\entityLayer\dto\LoginDTO.class
 com\ads\activosfijos\entityLayer\Area.class
+com\ads\activosfijos\dataAccessLayer\IUserService.class
 com\ads\activosfijos\entityLayer\mapper\IPersonaMapper.class
 com\ads\activosfijos\entityLayer\mapper\IPersonaMapperImpl.class
 com\ads\activosfijos\dataAccessLayer\impl\AbstractService.class
@@ -33,5 +33,6 @@ com\ads\activosfijos\entityLayer\Dueno.class
 com\ads\activosfijos\CustomJpaConfiguration.class
 com\ads\activosfijos\dataAccessLayer\impl\UserService.class
 com\ads\activosfijos\entityLayer\dto\ActivoDTO.class
+com\ads\activosfijos\entityLayer\dto\UserDTO.class
 com\ads\activosfijos\entityLayer\mapper\IAreaMapper.class
 com\ads\activosfijos\util\PasswordUtils$InvalidHashException.class

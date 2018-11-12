@@ -6,6 +6,7 @@ import javax.xml.bind.DatatypeConverter;
 import java.security.SecureRandom;
 
 /**
+ * Utilidades para crear Hash y comprobrar password
  * Created by Fabiani Lozano on 11/11/2018.
  */
 public final class PasswordUtils {
@@ -25,10 +26,20 @@ public final class PasswordUtils {
 
     private PasswordUtils() {}
 
+    /**
+     * Crea hash a partir de un String
+     * @param password
+     * @return
+     */
     public static String createHash(final String password) {
         return createHash(password.toCharArray());
     }
 
+    /**
+     * Crea hash a partir de char[]
+     * @param password
+     * @return
+     */
     private static String createHash(char[] password) {
         final SecureRandom random = new SecureRandom();
         final byte[] salt = new byte[SALT_BYTE_SIZE];
@@ -40,10 +51,22 @@ public final class PasswordUtils {
         return "sha1:" + PBKDF2_ITERATIONS + ":" + hashSize + ":" + toBase64(salt) + ":" + toBase64(hash);
     }
 
+    /**
+     * Verifica que un password coincida con su hash
+     * @param password
+     * @param correctHash
+     * @return
+     */
     public static boolean verifyPassword(final String password, final String correctHash) {
         return verifyPassword(password.toCharArray(), correctHash);
     }
 
+    /**
+     * Verifica que un password coincida con su hash
+     * @param password
+     * @param correctHash
+     * @return
+     */
     private static boolean verifyPassword(final char[] password, final String correctHash) {
         final String[] params = correctHash.split(":");
         if (params.length != HASH_SECTIONS) {
