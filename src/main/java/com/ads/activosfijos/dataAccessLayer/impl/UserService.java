@@ -1,5 +1,6 @@
 package com.ads.activosfijos.dataAccessLayer.impl;
 
+import com.ads.activosfijos.dataAccessLayer.IUserService;
 import com.ads.activosfijos.entityLayer.User;
 import com.ads.activosfijos.entityLayer.dto.UserDTO;
 import com.ads.activosfijos.util.PasswordUtils;
@@ -13,8 +14,9 @@ import java.util.List;
  * Created by Fabiani Lozano on 11/11/2018.
  */
 @Service
-public class UserService extends AbstractService{
+public class UserService extends AbstractService implements IUserService{
 
+    @Override
     public boolean existUser(final String user, String password) {
         TypedQuery<User> query = em.createNamedQuery("User.findByUser",User.class);
         query.setParameter("user",user);
@@ -27,6 +29,7 @@ public class UserService extends AbstractService{
         return false;
     }
 
+    @Override
     public User getUser(final String user) {
         TypedQuery<User> query = em.createNamedQuery("User.findByUser",User.class);
         query.setParameter("user",user);
@@ -38,6 +41,7 @@ public class UserService extends AbstractService{
         }
     }
 
+    @Override
     @Transactional
     public User registerUser(UserDTO user) {
         User us = new User();

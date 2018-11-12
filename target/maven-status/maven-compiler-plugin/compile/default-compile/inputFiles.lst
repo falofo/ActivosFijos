@@ -1,10 +1,11 @@
+C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\dataAccessLayer\IUserService.java
+C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\entityLayer\dto\UserDTO.java
 C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\bussinesLayer\ActivoController.java
 C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\entityLayer\mapper\IActivoMapper.java
 C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\security\JwtFilter.java
 C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\entityLayer\Dueno.java
 C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\entityLayer\dto\BusquedaDTO.java
 C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\entityLayer\Persona.java
-C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\entityLayer\dto\LoginDTO.java
 C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\util\PasswordUtils.java
 C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\dataAccessLayer\impl\UserService.java
 C:\Users\Fabiani Lozano\Documents\PruebaASD\ActivosFijos\src\main\java\com\ads\activosfijos\entityLayer\Area.java
