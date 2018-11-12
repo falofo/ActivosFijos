@@ -1,5 +1,7 @@
 package com.ads.activosfijos.entityLayer.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -22,8 +24,10 @@ public class ActivoConsultaDTO implements Serializable{
     @Column(name = "valor_compra")
     private Double valorCompra;
     @Column(name = "fecha_compra")
+    @JsonFormat(pattern="dd/MM/yyyy")
     private Date fechaCompra;
     @Column(name = "fecha_baja")
+    @JsonFormat(pattern="dd/MM/yyyy")
     private Date fechaBaja;
     private Double peso;
     private Double alto;
